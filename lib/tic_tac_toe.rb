@@ -97,20 +97,20 @@ def over?
   end
 end
 
-def winner(board)
-  if winning_combo = won?(board)
-    board[winning_combo.first]
+def winner
+  if winning_combo = won?
+    @board[winning_combo.first]
   end
 end
 
-def play(board)
-  until over?(board)
-    turn(board)
+def play
+  until over?
+    turn
   end
 
-  if won?(board)
-    puts "Congratulations #{winner(board)}!"
-  elsif draw?(board)
+  if won?
+    puts "Congratulations #{winner}!"
+  elsif draw?
     puts "Cat's Game!"
   end
 end
