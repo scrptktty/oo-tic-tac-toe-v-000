@@ -42,6 +42,7 @@ def valid_move?(index)
   index.between?(0,8) && !position_taken?(index)
 end
 
+
 def turn_count
   turn_number = 0
   @board.each do |space|
@@ -50,6 +51,10 @@ def turn_count
     end
   end
   turn_number
+end
+
+def current_player
+  turn_count % 2 == 0 ? "X" : "O"
 end
 
 end
