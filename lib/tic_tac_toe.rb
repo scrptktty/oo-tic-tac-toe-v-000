@@ -81,4 +81,38 @@ def won?
   end
 end
 
+def full?
+  !@board.include?(" ")
+end
+
+def draw?
+  if !won? && full?
+    true
+  end
+end
+
+def over?
+  if won? || full? || draw?
+    true
+  end
+end
+
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
+  end
+end
+
+def play(board)
+  until over?(board)
+    turn(board)
+  end
+
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Cat's Game!"
+  end
+end
+
 end
