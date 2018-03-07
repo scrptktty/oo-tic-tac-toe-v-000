@@ -31,7 +31,8 @@ def move(index, current_player="X")
 end
 
 def position_taken?(location)
-  @board[location] != " " && @board[location] != ""
+  if @board[location] != " " && @board[location] != ""
+    return true
 end
 
 def valid_move?(index)
