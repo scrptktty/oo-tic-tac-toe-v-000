@@ -26,15 +26,15 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-def move(@board, index, current_player="X")
+def move(board, index, current_player="X")
   board[index] = current_player
-end 
+end
 
-def position_taken?(@board, location)
+def position_taken?(board, location)
   @board[location] != " " && @board[location] != ""
 end
 
-def valid_move?(@board, index)
+def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(@board, index)
 end
 
