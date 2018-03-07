@@ -32,7 +32,9 @@ end
 
 def position_taken?(location)
   if @board[location] != " " && @board[location] != ""
-    return true
+    true
+  else
+    false
   end
 end
 
